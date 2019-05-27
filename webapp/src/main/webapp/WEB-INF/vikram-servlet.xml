@@ -13,17 +13,18 @@
 <context:component-scan base-package="com.vikram"></context:component-scan>
 
 <!-- database connection pooling  -->
+
 <bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-	<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+	<property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
 		<property name="url" value="jdbc:mysql://localhost:3306/webapplication" />
 		<property name="username" value="root" />
-	<property name="password" value="vikram#123" />
+	<property name="password" value="Vikram#123" />
 	</bean>
 	
 	<bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
-		<property name="packagesToScan" value="com.vikram.entity" />
+		<property name="packagesToScan" value="com.vikram" />
 		<property name="hibernateProperties">
 			<props>
 				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
@@ -37,5 +38,6 @@
 </bean>
 	
 <tx:annotation-driven transaction-manager="myTransactionManager" />	
+
 
 </beans>

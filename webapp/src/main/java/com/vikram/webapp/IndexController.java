@@ -33,8 +33,9 @@ public class IndexController
 	@RequestMapping("/checklogin")
 	public String collectingloginvalues(@ModelAttribute ("loginet") Loginentity loginet)
 	{
-		System.out.println("I am at checkinlogin");
+		//System.out.println("I am at checkinlogin");
 		logindao.checklogin(loginet);
+		System.out.println("I am at checkinlogin");
 		return "index.jsp";
 	}
 
